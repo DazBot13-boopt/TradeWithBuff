@@ -2649,3 +2649,15 @@ nohup: les entrées sont ignorées
 09:52:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:52:38] "GET /api/trades?limit=200 HTTP/1.1" 200 -
 09:53:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:53:38] "GET /api/trades?limit=200 HTTP/1.1" 200 -
 09:53:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:53:38] "GET /api/status HTTP/1.1" 200 -
+09:54:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:54:38] "GET /api/status HTTP/1.1" 200 -
+09:54:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:54:38] "GET /api/trades?limit=200 HTTP/1.1" 200 -
+09:55:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:55:38] "GET /api/status HTTP/1.1" 200 -
+09:55:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:55:38] "GET /api/trades?limit=200 HTTP/1.1" 200 -
+09:56:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:56:38] "GET /api/status HTTP/1.1" 200 -
+09:56:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:56:38] "GET /api/trades?limit=200 HTTP/1.1" 200 -
+09:57:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:57:38] "GET /api/status HTTP/1.1" 200 -
+09:57:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:57:38] "GET /api/trades?limit=200 HTTP/1.1" 200 -
+09:58:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:58:38] "GET /api/status HTTP/1.1" 200 -
+09:58:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:58:38] "GET /api/trades?limit=200 HTTP/1.1" 200 -
+09:59:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:59:38] "GET /api/status HTTP/1.1" 200 -
+09:59:38 [INFO] 127.0.0.1 - - [25/Jun/2026 09:59:38] "GET /api/trades?limit=200 HTTP/1.1" 200 -
