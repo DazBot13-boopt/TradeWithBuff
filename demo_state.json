@@ -1,0 +1,91 @@
+{
+  "balance": 950.0,
+  "initial_balance": 1000.0,
+  "total_pnl": 0.0,
+  "total_trades": 16,
+  "winning_trades": 3,
+  "losing_trades": 0,
+  "total_uptime_seconds": 0,
+  "positions": [
+    {
+      "asset": "106622784201530844335684269517198302486444245740243328744871893173444662258135",
+      "title": "XRP all time high by June 30, 2026?",
+      "outcome": "Yes",
+      "size": 19.63900000000001,
+      "avgPrice": 0.0010000000000000005,
+      "cost": 5.0
+    },
+    {
+      "asset": "96335319798300266587878383407639785375563587402719759663597159674985132849356",
+      "title": "Will Israel strike 15 or more countries in 2026?",
+      "outcome": "Yes",
+      "size": 1.1209999999999987,
+      "avgPrice": 0.0009999999999999985,
+      "cost": 5.0
+    },
+    {
+      "asset": "96335319798300266587878383407639785375563587402719759663597159674985132849356",
+      "title": "Will Israel strike 15 or more countries in 2026?",
+      "outcome": "Yes",
+      "size": 2.372,
+      "avgPrice": 0.0009999999999999996,
+      "cost": 5.0
+    },
+    {
+      "asset": "31883462749119556388086799399919753637232555218950340228250860473714993542724",
+      "title": "Xi Jinping out by June 30?",
+      "outcome": "Yes",
+      "size": 53.49299999999994,
+      "avgPrice": 0.0010000000000000013,
+      "cost": 5.0
+    },
+    {
+      "asset": "25154489359138656189676305295740648019872226167505418084009121941823239444658",
+      "title": "Ukraine election held by June 30, 2026?",
+      "outcome": "Yes",
+      "size": 2.1719999999999686,
+      "avgPrice": 0.0009999999999999922,
+      "cost": 5.0
+    },
+    {
+      "asset": "25154489359138656189676305295740648019872226167505418084009121941823239444658",
+      "title": "Ukraine election held by June 30, 2026?",
+      "outcome": "Yes",
+      "size": 1.2110000000000127,
+      "avgPrice": 0.0010000000000000041,
+      "cost": 5.0
+    },
+    {
+      "asset": "31883462749119556388086799399919753637232555218950340228250860473714993542724",
+      "title": "Xi Jinping out by June 30?",
+      "outcome": "Yes",
+      "size": 51.990999999999985,
+      "avgPrice": 0.000999999999999994,
+      "cost": 5.0
+    },
+    {
+      "asset": "88881546167580903996682472625161682790969845380707821672078333672003470750883",
+      "title": "Will Satoshi's identity be revealed by June 30?",
+      "outcome": "Yes",
+      "size": 23442.0,
+      "avgPrice": 0.5,
+      "cost": 5.0
+    },
+    {
+      "asset": "38208793744406659374526126908148940039609695506378367755718613389085432850399",
+      "title": "Will Marine Tondelier win the 2027 French presidential election?",
+      "outcome": "Yes",
+      "size": 2.927,
+      "avgPrice": 0.001,
+      "cost": 5.0
+    },
+    {
+      "asset": "49833740696160357960498803422758803597648678990432299054335909161221472983145",
+      "title": "Will BSW win the most seats in the 2026 Sachsen-Anhalt parliamentary elections?",
+      "outcome": "Yes",
+      "size": 2.6,
+      "avgPrice": 0.001,
+      "cost": 5.0
+    }
+  ]
+}

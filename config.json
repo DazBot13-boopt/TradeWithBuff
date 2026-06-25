@@ -1,0 +1,11 @@
+{
+  "wallets_to_track": [
+    "0x08730443345e11c078c5b2597ce3c0f06af609e8"
+  ],
+  "copy_percentage": 1,
+  "trading_enabled": true,
+  "mode": "demo",
+  "demo_balance": 1000,
+  "bet_amount": 5,
+  "rate_limit": 25
+}
