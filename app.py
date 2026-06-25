@@ -121,6 +121,10 @@ def bot_loop(config):
             from src.trading import TradingModule
             trading_module = TradingModule(config)
             logger.info("Connected to Polymarket — Production mode")
+        except ImportError as e:
+            logger.error(f"Production mode unavailable: {e}")
+            logger.warning("Falling back to demo mode (dry-run)")
+            mode = "demo"
         except Exception as e:
             logger.error(f"TradingModule init failed: {e}")
 

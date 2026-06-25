@@ -1,12 +1,23 @@
 import os
-import pmxt
 from dotenv import load_dotenv
 from typing import Dict, Any
 
 load_dotenv()
 
+# pmxt est optionnel — requis uniquement en mode production
+try:
+    import pmxt
+    PMXT_AVAILABLE = True
+except ImportError:
+    PMXT_AVAILABLE = False
+
 class TradingModule:
     def __init__(self, config: Dict[str, Any]):
+        if not PMXT_AVAILABLE:
+            raise ImportError(
+                "La librairie 'pmxt' n'est pas installée. "
+                "Le mode production n'est pas disponible."
+            )
         self.config = config
         self.copy_percentage = config.get("copy_percentage", 1.0)
         
