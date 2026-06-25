@@ -6,6 +6,9 @@ Polymarket Copy Trader — Web Interface (Demo + Production)
 import os, sys, json, time, threading, logging, traceback
 from datetime import datetime
 from flask import Flask, render_template, request, jsonify
+from dotenv import load_dotenv
+
+load_dotenv()
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -17,6 +20,9 @@ CONFIG_FILE  = "config.json"
 DEMO_FILE    = "demo_state.json"
 HISTORY_FILE = "trade_history.json"
 LOG_FILE     = "bot.log"
+
+# Lock pour éviter les corruptions de fichiers en écriture concurrente
+_file_lock = threading.Lock()
 
 DEFAULT_CONFIG = {
     "wallets_to_track": ["0x63ce342161250d705dc0b16df89036c8e5f9ba9a"],
@@ -61,8 +67,12 @@ def load_json(path, default):
         return dict(default)
 
 def save_json(path, data):
-    with open(path, "w") as f:
-        json.dump(data, f, indent=2)
+    with _file_lock:
+        # Écriture atomique : on écrit dans un fichier temporaire puis on renomme
+        tmp = path + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(data, f, indent=2)
+        os.replace(tmp, path)
 
 def load_all():
     cfg = load_json(CONFIG_FILE, DEFAULT_CONFIG)
@@ -227,6 +237,18 @@ def index():
 
 @app.route("/api/status")
 def api_status():
+    # Détection de crash silencieux du thread
+    if bot_state["running"]:
+        t = bot_state.get("thread")
+        if t and not t.is_alive():
+            logger.error("Bot thread crashed silently, resetting state")
+            bot_state["running"] = False
+            if bot_state["start_time"]:
+                elapsed = int((datetime.now() - bot_state["start_time"]).total_seconds())
+                bot_state["demo"]["total_uptime_seconds"] = bot_state["demo"].get("total_uptime_seconds", 0) + elapsed
+                save_json(DEMO_FILE, bot_state["demo"])
+                bot_state["start_time"] = None
+    
     uptime = 0
     if bot_state["start_time"]:
         uptime = int((datetime.now() - bot_state["start_time"]).total_seconds())
@@ -258,7 +280,13 @@ def api_status():
 @app.route("/api/start", methods=["POST"])
 def api_start():
     if bot_state["running"]:
-        return jsonify({"ok": False, "msg": "Already running"})
+        # Vérifie si le thread est encore vivant (crash silencieux)
+        t = bot_state.get("thread")
+        if t and not t.is_alive():
+            bot_state["running"] = False
+            logger.warning("Bot thread was dead, resetting state.")
+        else:
+            return jsonify({"ok": False, "msg": "Already running"})
     cfg = load_json(CONFIG_FILE, DEFAULT_CONFIG)
     if not cfg.get("wallets_to_track"):
         return jsonify({"ok": False, "msg": "No wallet configured"})

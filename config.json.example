@@ -1,9 +1,11 @@
 {
-  "wallets_to_track": [],
+  "wallets_to_track": [
+    "0xYOUR_WALLET_ADDRESS_HERE"
+  ],
   "copy_percentage": 1,
   "trading_enabled": false,
   "mode": "demo",
   "demo_balance": 1000,
-  "bet_amount": 5,
+  "bet_amount": 10,
   "rate_limit": 25
 }
